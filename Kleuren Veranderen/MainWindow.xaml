@@ -6,10 +6,11 @@
     Title="Kleuren Veranderen">
 
     <Grid Background="White">
-        <ComboBox x:Name="ColorComboBox" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
-            <ComboBoxItem Content="Blauw" />
-            <ComboBoxItem Content="Groen" />
-            <ComboBoxItem Content="Rood" />
+        <ComboBox x:Name="ColorComboBox" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" SelectedValuePath="Background">
+            <!-- De 'Background' van elk item wordt ingesteld op een kleur -->
+            <ComboBoxItem Content="Blauw" Background="Blue"/>
+            <ComboBoxItem Content="Groen" Background="Green"/>
+            <ComboBoxItem Content="Rood" Background="Red"/>
         </ComboBox>
 
         <Button Content="Stel Kleur In" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="OnChangeColorButtonClick" Margin="10"/>

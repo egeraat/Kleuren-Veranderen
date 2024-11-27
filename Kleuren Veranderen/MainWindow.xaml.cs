@@ -15,32 +15,19 @@ namespace Kleuren_Veranderen
 
         private void OnChangeColorButtonClick(object sender, RoutedEventArgs e)
         {
-            // Haal de geselecteerde waarde van de ComboBox op
-            var selectedItem = ColorComboBox.SelectedItem as ComboBoxItem;
+            // Haal de geselecteerde kleur op uit de ComboBox, de waarde is een SolidColorBrush (de Background)
+            var selectedColor = ColorComboBox.SelectedValue as SolidColorBrush;
 
-            // Controleer of er een item is geselecteerd
-            if (selectedItem != null)
+            // Zet een breakpoint op de volgende regel om het datatype van selectedColor te inspecteren
+            if (selectedColor != null)
             {
-                string selectedColor = selectedItem.Content.ToString();
-
-                // Stel de achtergrondkleur in op basis van de geselecteerde kleur
-                if (selectedColor == "Blauw")
-                {
-                    ((Grid)this.Content).Background = new SolidColorBrush(Colors.Blue);
-                }
-                else if (selectedColor == "Groen")
-                {
-                    ((Grid)this.Content).Background = new SolidColorBrush(Colors.Green);
-                }
-                else if (selectedColor == "Rood")
-                {
-                    ((Grid)this.Content).Background = new SolidColorBrush(Colors.Red);
-                }
+                // De geselecteerde kleur is een SolidColorBrush, dus we kunnen deze direct toepassen
+                ((Grid)this.Content).Background = selectedColor;
             }
             else
             {
-                // Indien geen item is geselecteerd, kan je een foutmelding of default kleur tonen
-                ((Grid)this.Content).Background = new SolidColorBrush(Colors.Gray); // voorbeeld fallback kleur
+                // Als er geen waarde is geselecteerd, stel je een fallback-kleur in (bijvoorbeeld grijs)
+                ((Grid)this.Content).Background = new SolidColorBrush(Colors.Gray);
             }
         }
     }
