@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Kleuren Veranderen (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Kleuren Veranderen (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
